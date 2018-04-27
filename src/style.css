@@ -1,0 +1,73 @@
+.commentBox {
+    width:100%;
+    margin:0 auto;
+    font-family:'Helvetica; sans-serif';
+    padding-top: 60px;
+}
+.title {
+    text-align:center;
+    text-transform:uppercase;
+}
+.commentList {
+    border:1px solid #f1f1f1;
+    padding:0 12px;
+    max-height:70vh;
+    overflow:scroll;
+}
+.comment {
+    background-color:#fafafa;
+    margin:10px;
+    padding:3px 10px;
+    font-size:.85rem
+}
+.commentForm {
+    margin:10px;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-between
+}
+.commentFormAuthor{
+    min-width:150px;
+    margin:3px;
+    padding:0 10px;
+    border-radius:3px;
+    height:40px;
+    flex:2
+}
+.commentFormText {
+    flex:4;
+    min-width:400px;
+    margin:3px;
+    padding:0 10px;
+    height:40px;
+    border-radius:3px
+}
+.commentFormPost {
+    min-width:75px;
+    flex:1;
+    height:40px;
+    margin:5px 3px;
+    font-size:1rem;
+    background-color:#A3CDFD;
+    border-radius:3px;
+    color:#fff;
+    text-transform:uppercase;
+    letter-spacing:.055rem;
+    border:none
+}
+.updateLink {
+    text-decoration:none;
+    padding-right:15px;
+    font-size:.7rem
+}
+.deleteLink {
+    text-decoration:none;
+    padding-right:15px;
+    font-size:.7rem;
+    color:red
+}
+
+p.card-text {
+    font-family: cursive;
+    font-size: 16px;
+}
