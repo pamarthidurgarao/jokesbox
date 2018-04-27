@@ -39,7 +39,8 @@ router.get('/', function(req, res) {
 
 router.route('/jokes')
   .get(function(req, res) {
-    Joke.find(function(err, jokes) {
+    var sort={ versionDate: 1 };
+    Joke.find().sort(sort).then(function(err, jokes) {
       if (err)
         res.send(err);
       res.json(jokes)
@@ -51,7 +52,7 @@ router.route('/jokes')
     var joke = new Joke();
     (req.body.user) ? joke.user = req.body.user : null;
     (req.body.text) ? joke.text = req.body.text : null;
-
+    joke.versionDate = new Date().getTime();
     joke.save(function(err) {
       if (err)
         res.send(err);
@@ -66,6 +67,7 @@ router.route('/jokes/:joke_id')
         res.send(err);
       (req.body.user) ? joke.user = req.body.user : null;
       (req.body.text) ? joke.text = req.body.text : null;
+      joke.versionDate = new Date().getTime();
       joke.save(function(err) {
         if (err)
           res.send(err);

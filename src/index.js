@@ -4,5 +4,5 @@ import ReportTimeline from './ReportTimeline';
 import registerServiceWorker from './registerServiceWorker';
 import './style.css'
 
-ReactDOM.render( <ReportTimeline url="http://localhost:3001/api/jokes" pollInterval={20000}/> , document.getElementById('root'));
+ReactDOM.render( <ReportTimeline url="https://jokesbox.herokuapp.com//api/jokes" pollInterval={20000}/> , document.getElementById('root'));
 registerServiceWorker();

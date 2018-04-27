@@ -107,12 +107,12 @@ class Header extends Component {
        
         return (
             <div>
-            <nav className="navbar navbar-light bg-light fixed-top ">
+            <nav className="navbar navbar-light fixed-top shadowNav">
                 <a className="navbar-brand">
-                    <img src="https://getbootstrap.com//assets/brand/bootstrap-solid.svg" width="30" height="30" className="d-inline-block align-top" alt=""/> Jokes Box
+                    <img src="https://getbootstrap.com//assets/brand/bootstrap-solid.svg" width="30" height="30" className="d-inline-block align-top" alt=""/> <span className="appTitle">Jokes Box</span>
                 </a>
                 <form className="form-inline my-2 my-lg-0">
-                    <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#addJokeModal">Add Joke</button>
+                    <button type="button" className="btn btn-primary addJoke" data-toggle="modal" data-target="#addJokeModal">Add Joke</button>
                 </form>
             </nav>
                         
