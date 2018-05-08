@@ -88,6 +88,4 @@ app.use('/api', router);
 //starts the server and listens for requests
 app.listen(port, function() {
     console.log(`api running on port ${port}`);
-},function(error){
-  console.log(`Error on ${port}`);
 });
