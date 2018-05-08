@@ -17,7 +17,7 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "npm run server && npm run client",
     "server": "node server.js",
     "client": "react-scripts start",
     "dev": "echo \"This command has been deprecated. Use 'npm start'\" && exit 1",
