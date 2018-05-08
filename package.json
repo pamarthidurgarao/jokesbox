@@ -1,26 +1,28 @@
 {
-  "name": "report",
-  "version": "0.1.0",
-  "private": true,
+  "name": "jokesbox",
+  "version": "1.0.0",
+  "description": "",
   "dependencies": {
-    "axios": "^0.18.0",
-    "body-parser": "^1.18.2",
-    "cloudinary-react": "^1.0.6",
-    "express": "^4.16.3",
-    "foreman": "^2.0.0",
     "marked": "^0.3.19",
     "mongoose": "^5.0.16",
     "nodemon": "^1.17.3",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-dropzone": "^4.2.9",
-    "react-scripts": "1.1.4"
+    "express": "^4.16.3",
+    "body-parser": "^1.18.2",
+    "foreman": "^2.0.0",
   },
   "scripts": {
-    "start": "npm run server && npm run client",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server.js",
-    "client": "react-scripts start",
+    "client": "node start-ui.js",
     "dev": "echo \"This command has been deprecated. Use 'npm start'\" && exit 1",
     "lint": "eslint ."
+  },
+  "devDependencies": {
+    "concurrently": "3.1.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "4.0.0",
+    "eslint-plugin-react": "6.9.0"
   }
 }

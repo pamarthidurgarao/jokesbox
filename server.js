@@ -3,7 +3,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var Joke = require('./src/model/jokes');
+var Joke = require('./ui/src/model/jokes');
 var secrets = require('./secrets');
 
 var app = express();
