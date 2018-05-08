@@ -11,6 +11,9 @@ var router = express.Router();
 
 var port = process.env.PORT  || 3001;
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("ui/build"));
+}
 //db config -- set your URI from mLab in secrets.js
 var mongoDB = secrets.requestSecret('db_uri');
 mongoose.connect(mongoDB, {  })
