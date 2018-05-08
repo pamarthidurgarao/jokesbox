@@ -42,10 +42,11 @@ router.get('/', function(req, res) {
 
 router.route('/jokes')
   .get(function(req, res) {
-    var sort={ versionDate: 1 };
+    var sort = { versionDate: 'desc' };
     Joke.find().sort(sort).then(function(err, jokes) {
       if (err)
         res.send(err);
+      if(jokes)
       res.json(jokes)
     });
   })
@@ -57,8 +58,9 @@ router.route('/jokes')
     (req.body.text) ? joke.text = req.body.text : null;
     joke.versionDate = new Date().getTime();
     joke.save(function(err) {
-      if (err)
+      if (err){
         res.send(err);
+      }
       res.json({ message: 'joke successfully added!' });
     });
   });
