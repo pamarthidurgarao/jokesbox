@@ -6,13 +6,13 @@ import './style.css';
 
 class ReportTimeline extends Component {
     constructor(props) {
-        super(props);
+        super(props);   
         this.state = { data: [] }; 
         this.loadData = this.loadData.bind(this);
         this.saveJoke = this.saveJoke.bind(this);
     }
     loadData(){
-        axios.get(this.props.url)
+        axios.get('/api/jokes')
         .then(res => {
             console.log(res.data );
           this.setState({ data: res.data });
@@ -25,7 +25,7 @@ class ReportTimeline extends Component {
         let jokes = this.state.data;
         let newComments = jokes.concat([joke]);
         this.setState({ data: newComments });
-        axios.post(this.props.url, joke)
+        axios.post('/api/jokes', joke)
           .catch(err => {
             console.error(err);
             this.setState({ data: jokes });
@@ -33,9 +33,7 @@ class ReportTimeline extends Component {
     }
     componentDidMount() {
         this.loadData();
-        if (!this.pollInterval) {
-          this.pollInterval = setInterval(this.loadData, this.props.pollInterval)
-        } 
+          this.pollInterval = setInterval(this.loadData, 30000)
       }
     componentWillUnmount() {
       this.pollInterval && clearInterval(this.pollInterval);

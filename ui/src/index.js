@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReportTimeline from './ReportTimeline';
 import registerServiceWorker from './registerServiceWorker';
 import './style.css'
+import App from './App';
 
-ReactDOM.render( <ReportTimeline url="api/jokes" pollInterval={20000}/> , document.getElementById('root'));
+
+
+
+ReactDOM.render( <App/>, document.getElementById('root'));
 registerServiceWorker();
